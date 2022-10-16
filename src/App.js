@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import BlogEntries from './components/BlogEntries';
+import Header from './components/Header';
+import IntroductionMenu from './components/IntroductionMenu';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <>
+      <div className="w3-content" style={{ maxWidth: 1400 }}>
+        <Header/>
+        <div className='w3-row'>
+          <BlogEntries/>
+        <IntroductionMenu/>
+        </div>
+        <Footer/>
+      </div>
+      </>
+  )
 }
 
 export default App;
+
