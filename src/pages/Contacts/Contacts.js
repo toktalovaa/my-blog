@@ -4,7 +4,7 @@ import styles from "./Contacts.module.css"
 const Contacts =(props)=>{
     return(
         <div className={styles.contacts}>
-            <h1>{props.number}</h1>
+            <h1>{props.text}</h1>
         </div>
     )
 }

@@ -5,32 +5,28 @@ import Header from './components/Header/Header';
 import Main from './pages/Main/Main';
 import About from './pages/About/About';
 import Contacts from './pages/Contacts/Contacts';
-import News from './pages/News/News';
 import NotFound from './pages/NotFound/NotFound';
 import Catalog from './pages/Catalog/Catalog';
 import Iphone from './pages/Iphone/Iphone';
-import MacBook from './pages/MacBook/MacBook';
+import Product from './pages/Product/Product';
+import Watches from './pages/Watches/Watches';
 
 
 function App() {
   return (
-    <>
-       <Header/>
        <BrowserRouter>
+            <Header/>
        <Routes>
           <Route path='/' element={<Main pageName="Главная станица"/>}/>
           <Route path='/about' element={<About text="Информация о нас"/>}/>
-          <Route path='/contacts' element={<Contacts number="СВЯЖИТЕСЬ С НАМИ"/>}/>
-          <Route path='/news' element={<News/>}/>
-          <Route path='/catalog' element={<Catalog/>}>
-            <Route path='/Iphone' element={<Iphone/>}/>
-            <Route path='/MacBook' element={<MacBook/>}/>
-          </Route>
-
+          <Route path='/contacts' element={<Contacts text="СВЯЖИТЕСЬ С НАМИ"/>}/>
+          <Route path='/catalog' element={<Catalog/>}/>
+          <Route path='/catalog/iphone' element={<Iphone/>}/>
+          <Route path='/catalog/watches' element={<Watches/>}/>
+          <Route path='/product/:id' element={<Product/>}/>
           <Route path='*' element={<NotFound text="Страница не найдена"/>}/>
        </Routes>
        </BrowserRouter>    
-    </>
   )
 }
 

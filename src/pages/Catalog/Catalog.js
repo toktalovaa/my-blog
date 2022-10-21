@@ -1,19 +1,29 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+// import Iphone from "../Iphone/Iphone";
 import styles from "./Catalog.module.css"
  
 
 const title={
-    TextAlign:'center'
+    textAlign:'center'
 }
 
 const Catalog= ()=>{
     return(
-        <div>
-     <h1 style={title}>Catalog</h1>
-     <Outlet/>
-        </div>
-    )
-}
+        <>
+            <h1 style={title}>Catalog</h1>
+            <div className={styles.conteiner}>
+                <div className={styles.catalog_card}>
+                    <img src="https://www.istore.kg/media/category/watches.webp" alt=""/>
+                    <h2>watches</h2>
+                </div>
+                <div className={styles.catalog_card}>
+                    <img src="https://www.istore.kg/media/category/iphones.webp" alt=""/>
+                    <h2>Iphone</h2>
+                </div>
+
+            </div>
+        </>
+    );
+};
 
 export default Catalog;
