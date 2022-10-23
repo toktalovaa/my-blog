@@ -1,3 +1,16 @@
 .watches{
    text-align: center;
 }
+
+.watch_card{
+   width: 400px;
+  text-align:center;
+  background: rgb(240, 233, 233);
+ 
+}
+.watch_card img{
+    width: 300px;
+    height: 300px;
+    max-width: 100%;
+
+}

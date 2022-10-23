@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import './App.css';
 import Header from './components/Header/Header';
 import Main from './pages/Main/Main';
@@ -10,6 +11,7 @@ import Catalog from './pages/Catalog/Catalog';
 import Iphone from './pages/Iphone/Iphone';
 import Product from './pages/Product/Product';
 import Watches from './pages/Watches/Watches';
+import Products from './pages/Admin/Products/Products';
 
 
 function App() {
@@ -22,10 +24,12 @@ function App() {
           <Route path='/contacts' element={<Contacts text="СВЯЖИТЕСЬ С НАМИ"/>}/>
           <Route path='/catalog' element={<Catalog/>}/>
           <Route path='/catalog/iphone' element={<Iphone/>}/>
-          <Route path='/catalog/watches' element={<Watches/>}/>
+          <Route path='/catalog/apple-watch' element={<Watches/>}/>
           <Route path='/product/:id' element={<Product/>}/>
+          <Route path='/admin/add-products' element={<Products/>}/>
           <Route path='*' element={<NotFound text="Страница не найдена"/>}/>
        </Routes>
+       <Toaster/>
        </BrowserRouter>    
   )
 }
