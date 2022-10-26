@@ -8,8 +8,12 @@ const About = () =>{
    useEffect(() => {
       fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => {
-        console.log(response)   //проверка статуса
-        return response.json()})
+        if (response.status === "200"){
+            return(response.json());
+        }else{
+            alert("Произошда ошибка "+response.status)
+        }
+      })
       .then(data => setUsers(data));
    }, []);
 

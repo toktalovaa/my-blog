@@ -3,26 +3,26 @@ import  { toast } from "react-hot-toast";
 import styles from "./Iphone.module.css";
 
 
-const Iphone=()=>{
+const Iphone = () => {
 
-    const [iphones, setPhones]= useState()
+    const [iphones, setPhones]= useState([]);
     
-    const getPhone=()=>{
+    const getIPhones= () => {
         const url = "http://localhost:3000/iphones";
 
         fetch(url)
-        .then(response =>{
-            if(response.status === 200){
-               return response.json()
-            } else{
-                toast.error('Произошла ошибка. Статус ошибки'+ response.status)
-            }
-        })
-        .then(data => setPhones(data))
-    }
+            .then(response => {
+                if(response.status === 200){
+                return response.json()
+                } else{
+                    toast.error('Произошла ошибка. Статус ошибки'+ response.status)
+                }
+            })
+            .then(data => setPhones(data))
+        }
 
-    useEffect( ()=>{
-        getPhone()
+    useEffect( () => {
+        getIPhones()
     }, [])
  
     return(
@@ -30,8 +30,8 @@ const Iphone=()=>{
             <h1 className={styles.iphone}> Айфоны</h1>
             <div className={styles.product_conteiner}>
             {
-                iphones.map(item =>{
-                    return(
+                iphones.map(item => {
+                    return (
                     <div className="product_card">
                         <img src={item.image} alt=""/>
                         <h3>{item.name}</h3>
@@ -40,10 +40,8 @@ const Iphone=()=>{
                     </div>
                 )
               })
-
             }
-         </div>
-         
+         </div>        
     </div>
     );
 };

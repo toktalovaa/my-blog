@@ -7,9 +7,7 @@ import styles from "./Product.module.css"
 const Product = () => {
  const params = useParams();
  const [searchPararms, setSearchPararms] = useSearchParams();
- const prodId = +params.id;
-
- const phone = iphones.find(elem => elem.id === prodId)
+ const product = iphones.find(elem => elem.id === +params.id)
  
    if(iphones === undefined)
         return <h2>Товар не найден</h2>
@@ -17,12 +15,12 @@ const Product = () => {
         return(
         <div className={styles.container}>
             <div >
-             <img src={phone.image} alt=""/>
+             <img src={product.image} alt=""/>
             </div>
             <div className={styles.info}>
-                <h2>{phone.name}</h2>
-                <h3>{phone.price}</h3>
-                <p>{phone.description}</p>
+                <h2>{product.name}</h2>
+                <h3>{product.price}</h3>
+                <p>{product.description}</p>
                 <p className={styles.quantity}>
                     {+searchPararms.get('quantity')=== 0? 'нет в наличии':'товар в наличии'}</p>
             </div>        
