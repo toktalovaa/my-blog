@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
-import s from "IphoneAdmin.module.css"
+import s from "./IphoneAdmin.module.css"
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 const IphoneAdmin =()=> {
     const [goods, setGoods]= useState([]);
 
-    const deleteGoods = (id)=>{
-        const url = "http://localhost:3000/iphones"+ id;
+    const deleteGoods = (id) => {
+        const url = "http://localhost:3000/iphones/" + id;
 
-    }
-    const options={
+        const options={
         method:'DELETE'
     }
-    fetch(url, options)
+        fetch(url , options)
     .then(response=>{
         if(response.ok){
             toast.success("Успешно удалено");
@@ -20,7 +20,10 @@ const IphoneAdmin =()=> {
         }else{
             toast.error("Ошибка"+response.status);
         }
+        
     })
+    }
+
 
     const getGoods= ()=>{
         const url = "http://localhost:3000/iphones";
@@ -36,17 +39,17 @@ const IphoneAdmin =()=> {
         .then(data => setGoods(data))
     }
 
-    useEffect(getGoods, [])
+    useEffect(getGoods, []);
 
 
     return(
         <div className={s.container}>
             <table>
                 <tr>
-                    <tr>Изображение</tr>
-                    <tr>Название</tr>
-                    <tr>Цена</tr>
-                    <tr>Действия</tr>
+                    <th>Изображение</th>
+                    <th>Название</th>
+                    <th>Цена</th>
+                    <th>Действия</th>
                 </tr>
                 {
                     goods.map(item =>{
@@ -57,7 +60,7 @@ const IphoneAdmin =()=> {
                             <td>{item.price}</td>
                             <td>
                                 <button onClick={()=>deleteGoods(item.id)}>Удалить</button>
-                                <button>Редактировать</button>
+                                <Link to={`/admin/update-product/${item.id}`}><button>Редактировать</button></Link>
                             </td>
                         </tr>
                         )
@@ -69,3 +72,4 @@ const IphoneAdmin =()=> {
 };
 
 export default IphoneAdmin;
+

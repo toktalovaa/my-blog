@@ -13,6 +13,8 @@ import Product from './pages/Product/Product';
 import Watches from './pages/Watches/Watches';
 import Products from './pages/Admin/Products/Products';
 import IphoneAdmin from './pages/Admin/IphoneAdmin/IphoneAdmin';
+import UpdateProduct from './pages/Admin/UpdateProduct/UpdateProduct';
+import Cart from './pages/Cart/Cart';
 
 
 function App() {
@@ -27,9 +29,10 @@ function App() {
           <Route path='/catalog/iphone' element={<Iphone/>}/>
           <Route path='/catalog/apple-watch' element={<Watches/>}/>
           <Route path='/product/:id' element={<Product/>}/>
+          <Route path='/cart' element={<Cart/>}/>
           <Route path='/admin/add-products' element={<Products/>}/>
           <Route path='/admin/iphone' element={<IphoneAdmin/>}/>
-
+          <Route path='/admin/update-product/:id' element={<UpdateProduct/>}/>
           <Route path='*' element={<NotFound text="Страница не найдена"/>}/>
        </Routes>
        <Toaster/>
