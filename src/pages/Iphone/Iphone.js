@@ -25,7 +25,7 @@ const getProduct= (data)=> {
     const id = data.id;
     let cart= JSON.parse(localStorage.getItem('cart')) || {};
        cart[id]={ ...data, count:1}
-       
+
     localStorage.setItem('cart', JSON.stringify(cart))
 }
 
@@ -43,7 +43,7 @@ useEffect( () => {
                     <div key={item.id} className="product_card">
                         <img src={item.image} alt=""/>
                         <h3>{item.name}</h3>
-                        <h4>{item.price}</h4>
+                        <h4>{item.price} {item.currenсy}</h4>
                         <button onClick={() => getProduct(item)}>Купить</button>
                     </div>
                 )

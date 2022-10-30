@@ -13,6 +13,8 @@ const Header=()=>{
                 <li><NavLink className={ setActive } to="/about"> О нас </NavLink></li>
                 <li><NavLink className={setActive} to="/contacts">Контакты</NavLink></li>
                 <li><NavLink className={ setActive } to="/catalog">Каталог</NavLink></li>
+                <li><NavLink className={ setActive } to="/cart">Корзина</NavLink></li>
+
             </ul>
         </div>
    );

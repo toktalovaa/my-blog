@@ -1,0 +1,17 @@
+.container{
+    width: 900px;
+    margin:0 auto;
+}
+.container form input{
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 18px;
+
+}
+
+.container button{
+    width: 100%;
+    padding: 15px 30px;
+    background-color: darkorange;
+    border: 0;
+}
